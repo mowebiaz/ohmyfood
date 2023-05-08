@@ -1,0 +1,263 @@
+@charset "UTF-8";
+/* Forms
+   ========================================================================== */
+button,
+input {
+  font-family: inherit;
+  color: inherit;
+  font-size: 100%;
+  /* line-height: 1.15; Change the font styles in all browsers: à revoir */
+  margin: 0; /* Remove the margin in Firefox and Safari: à revoir */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* pour que le footer reste en bas avec margin-top auto */
+  width: 100%;
+  max-width: 1180px; /* à vérifier qd je passerai en responsive */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: inherit;
+  text-decoration: none;
+  /*   @include on-event {
+      color: $text-color;
+      text-decoration: underline;
+    } */
+}
+
+img {
+  object-fit: cover;
+}
+
+/* Basic typography style for copy text */
+/* par défaut: Roboto 16px 400 */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.header__title { /* revoir la couleur du texte */
+  font-family: "Shrikhand", cursive;
+  font-size: 30px;
+}
+.header__icon {
+  position: absolute;
+  width: 30px;
+  line-height: 30px;
+  top: 17px;
+  left: 17px;
+}
+
+.footer {
+  margin-top: auto; /* pour toujours le garder en bas avec le flex du container */
+  padding: 22px 0 22px 25px;
+  background-color: #373737;
+  color: white;
+}
+.footer ul {
+  font-weight: 500;
+  list-style-type: none;
+}
+.footer ul li {
+  padding-bottom: 7px;
+}
+.footer__logo {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.125rem;
+  margin-bottom: 16px;
+}
+.footer__link p {
+  display: inline-block;
+}
+.footer__link--indent {
+  margin-left: 10px;
+}
+.footer__link .fa-fw {
+  width: 12px;
+}
+
+.btn {
+  display: block;
+  margin: 27px auto;
+  color: white;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  border-radius: 25px;
+  font-weight: 500;
+  height: 50px;
+  padding: 13px 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 9px 50px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.header__icon {
+  display: none;
+}
+
+.location {
+  height: 50px;
+  background-color: #ececec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.location p {
+  font-weight: 500;
+  color: #353535;
+  margin-left: 17px;
+}
+
+.explore {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #F6F6F6;
+  padding: 30px 0;
+}
+.explore p {
+  font-size: 1.125rem;
+  font-weight: 300;
+}
+
+.search {
+  padding: 48px 20px 68px 20px;
+}
+.search ol {
+  list-style-type: none;
+  font-weight: 500;
+  counter-reset: li; /* Initiate a counter */
+}
+.search__link {
+  position: relative;
+  background-color: #F6F6F6;
+  border-radius: 20px;
+  margin-left: 10px;
+  margin-top: 25px;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* à revoir */
+}
+.search__link::before {
+  content: counter(li);
+  counter-increment: li;
+  border-radius: 50%;
+  background-color: #9356DC;
+  font-size: 0.9rem;
+  color: white;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  left: -12px;
+  padding-top: 2px;
+}
+.search__link .fa-mobile-screen-button,
+.search__link .fa-list-ul {
+  color: gray; /* à revoir */
+}
+.search__link .fa-store {
+  color: #9356DC;
+}
+.search__link .fa-fw {
+  width: 73px;
+}
+.search__link p {
+  flex-grow: 1;
+}
+
+.food {
+  background-color: #F6F6F6;
+  padding: 54px 20px 46px 20px;
+}
+.food h2 {
+  margin-bottom: 28px;
+}
+
+.food-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-bottom: 18px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  position: relative;
+  /*height: 251px;*/
+}
+.card img { /*revoir la hauteur de l'image */
+  height: 120px;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+.card__content {
+  padding: 16px 0 16px 13px;
+}
+.card__content p {
+  font-weight: 300;
+}
+.card__new {
+  position: absolute;
+  right: 22px;
+  top: 13px;
+  background-color: #99E2D0;
+  color: #008665;
+  border-radius: 2px;
+  width: 80px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card__new p {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.footer {
+    margin-top: auto; /* pour toujours le garder en bas avec le flex du container */
+    padding: 22px 0 22px 25px;
+    background-color: adjust-color($background-color, $lightness: -75%);
+    color: white;
+    ul {
+        font-weight: $font-medium;
+        list-style-type: none;
+        li {
+            padding-bottom: 7px;
+        }
+    }
+
+    &__logo {
+        font-family: $font-title;
+        font-size: 1.125rem;
+        margin-bottom: 16px;
+    }
+    &__link {
+        p {
+            display: inline-block;
+        }
+        &--indent {
+            margin-left: 10px;
+        }
+        .fa-fw {
+            width: 12px;
+        }
+
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "site web de ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch" : "sass ./sass/main.scss ./assets/css/style.css --watch"
+  },
+  "author": "mowebiaz",
+  "license": "ISC"
+}

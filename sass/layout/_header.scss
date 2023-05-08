@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+header {
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    &__title { /* revoir la couleur du texte */
+        font-family: $font-title;
+        font-size: 30px;
+    }
+    &__icon {
+        position: absolute;
+        width: 30px;
+        line-height: 30px;
+        top: 17px;
+        left: 17px;
+    }
+}

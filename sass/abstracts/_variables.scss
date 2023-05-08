@@ -1,0 +1,44 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+/// Copy text family
+/// @type List
+$font-text: 'Roboto', sans-serif;
+
+/// Title and logo font family
+/// @type List
+$font-title: 'Shrikhand', cursive;
+
+/// Font weight
+$font-light: 300;
+$font-medium: 500;
+$font-bold: 700;
+
+
+
+/// Colors
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$background-color: #F6F6F6;
+
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px;
+
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+
