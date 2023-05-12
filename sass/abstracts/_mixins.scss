@@ -8,6 +8,14 @@
 }
 
 
+@mixin buttonhover {
+  box-shadow: 0 4px  15px opacify($shadow-color, 0.2); 
+  opacity: 0.85; 
+}
+
+
+
+
 
 /// Event wrapper
 /// @author Harry Roberts
