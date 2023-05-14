@@ -8,6 +8,9 @@ header {
     padding: 10px 0;
     position: relative;
     z-index: 1;
+    @include medium-screen {
+        box-shadow: none;
+    }
 }
 
 .header {

@@ -2,7 +2,8 @@
 /* à revoir: hue saturation lightness opacity */
 /* Forms
    ========================================================================== */
-button {
+button,
+input {
   font-family: inherit;
   color: inherit;
   font-size: 100%;
@@ -20,7 +21,7 @@ body {
   flex-direction: column;
   min-height: 100vh; /* pour que le footer reste en bas avec margin-top auto */
   width: 100%;
-  max-width: 1920px; /* à vérifier qd je passerai en responsive */
+  max-width: 1920px;
 }
 
 *,
@@ -62,6 +63,11 @@ header {
   position: relative;
   z-index: 1;
 }
+@media screen and (min-width: 768px) {
+  header {
+    box-shadow: none;
+  }
+}
 
 .header__title { /* revoir la couleur du texte */
   font-family: "Shrikhand", cursive;
@@ -81,17 +87,43 @@ header {
   background-color: #373737;
   color: white;
 }
+@media screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 16px;
+    padding: 30px 25px;
+  }
+}
 .footer ul {
   font-weight: 500;
   list-style-type: none;
 }
-.footer ul li {
-  padding-bottom: 7px;
+@media screen and (min-width: 768px) {
+  .footer ul {
+    display: flex;
+    align-items: flex-end;
+    gap: 7px;
+    /*margin-right: 40px;*/
+  }
 }
 .footer__logo {
   font-family: "Shrikhand", cursive;
   font-size: 1.125rem;
   margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo {
+    margin: 0 40px 0 0;
+  }
+}
+.footer__link {
+  padding-bottom: 7px;
+}
+@media screen and (min-width: 768px) {
+  .footer__link { /* faire un not indent */
+    padding-bottom: 0;
+  }
 }
 .footer__link p {
   display: inline-block;
@@ -170,10 +202,25 @@ h3 {
 .search {
   padding: 48px 20px 68px 20px;
 }
+@media screen and (min-width: 1024px) {
+  .search {
+    width: 75%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+}
 .search ol {
   list-style-type: none;
   font-weight: 500;
   counter-reset: li; /* Initiate a counter */
+}
+@media screen and (min-width: 1024px) {
+  .search ol {
+    display: flex;
+    gap: 24px;
+  }
 }
 .search__link {
   position: relative;
@@ -186,6 +233,12 @@ h3 {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 15px hsla(0, 0%, 0%, 0.15);
+}
+@media screen and (min-width: 1024px) {
+  .search__link {
+    margin-top: 0;
+    flex: 1 1 0;
+  }
 }
 .search__link::before {
   content: counter(li);
@@ -220,8 +273,19 @@ h3 {
   background-color: #F6F6F6;
   padding: 54px 20px 46px 20px;
 }
+@media screen and (min-width: 1024px) {
+  .food {
+    padding: 30px 0 10px 0;
+  }
+}
 .food h2 {
   margin-bottom: 28px;
+}
+@media screen and (min-width: 1024px) {
+  .food h2 {
+    width: 75%;
+    margin: 0 auto;
+  }
 }
 
 .food-cards {
@@ -230,11 +294,22 @@ h3 {
   gap: 18px;
   padding-bottom: 18px;
 }
+@media screen and (min-width: 1024px) {
+  .food-cards {
+    flex-direction: row;
+    gap: 100px;
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+}
 
 .card {
   background-color: white;
   border-radius: 15px;
   position: relative;
+  flex: 1 1 0;
 }
 .card img {
   height: 175px;
@@ -288,7 +363,7 @@ h3 {
   height: 22px;
   width: 22px;
 }
-.card__icon input[type=checkbox]:checked::before {
+.card__icon input[type=checkbox]:checked::before { /* rajouter focus et hover */
   display: inline-flex;
   content: "";
   background-image: url("../images/icons/heartfull.svg");

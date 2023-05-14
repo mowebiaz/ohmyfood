@@ -47,10 +47,21 @@ h3 {
 
 .search {
     padding: 48px 20px 68px 20px;
+    @include large-screen {
+        width: 75%;
+        margin: 50px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
     ol {
         list-style-type: none;
         font-weight: $font-medium;
         counter-reset: li; /* Initiate a counter */
+        @include large-screen {
+            display: flex;
+            gap: 24px;
+        }
     }
     &__link {
         position: relative;
@@ -63,6 +74,10 @@ h3 {
         align-items: center;
         justify-content: center;
         box-shadow: 0 4px 15px $shadow-color; 
+        @include large-screen {
+            margin-top: 0;
+            flex: 1 1 0;
+        }
         &::before {
             content:counter(li);
             counter-increment: li;
@@ -77,7 +92,6 @@ h3 {
             text-align: center;
             left: -12px;
             padding-top: 2px;
-
         }
         .fa-mobile-screen-button,
         .fa-list-ul {
@@ -101,8 +115,15 @@ h3 {
 .food {
     background-color: $background-color;
     padding: 54px 20px 46px 20px;
+    @include large-screen {
+        padding: 30px 0 10px 0 ;
+    }
     h2 {
         margin-bottom: 28px;
+        @include large-screen {
+            width: 75%;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -111,12 +132,21 @@ h3 {
     flex-direction: column;
     gap: 18px;
     padding-bottom: 18px;
+    @include large-screen {
+        flex-direction: row;
+        gap: 100px;
+        width: 75%;
+        margin: 0 auto;
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
 }
 
 .card {
     background-color: white;
     border-radius: 15px;
     position: relative;
+    flex: 1 1 0;
     img { 
         height: 175px;
         width: 100%;
@@ -168,7 +198,7 @@ h3 {
                 height: 22px;
                 width: 22px;
             }
-            &:checked::before {
+            &:checked::before { /* rajouter focus et hover */
                 display: inline-flex;
                 content:'';
                 background-image: url('../images/icons/heartfull.svg');
