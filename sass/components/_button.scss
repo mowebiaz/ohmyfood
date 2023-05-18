@@ -12,7 +12,7 @@
     height: 50px;
     padding: 13px 18px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /*revoir la couleur */
-    box-shadow: 0 4px 10px opacify($shadow-color, 0.1); /*0.1 */
+    box-shadow: 0 4px 10px opacify($shadow-color, 0.1); 
     opacity: 1;
     transition: opacity 300ms ease-in-out;
     &:hover { /*mais ça change aussi l'opacité du texte */

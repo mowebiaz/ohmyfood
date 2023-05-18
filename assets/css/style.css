@@ -135,6 +135,138 @@ header {
   width: 12px;
 }
 
+.loader {
+  background-color: #F6F6F6;
+  position: absolute; /* à revoir */
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: 300ms ease-out 2700ms 1 forwards loaderanim;
+}
+.loader .clock {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  border: 5px double #99E2D0;
+  background: radial-gradient(#9356DC, #FF79DA);
+  box-shadow: 0 0 20px #99E2D0; /* offset-x | offset-y | blur-radius | spread-radius | color */
+}
+.loader .clock__center {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: calc(50% - 10px); /* 50% moins la moitié de height */
+  left: calc(50% - 10px);
+  border-radius: 50%;
+  background-color: #99E2D0;
+  box-shadow: 0 0 5px 2px #99E2D0;
+  z-index: 1;
+  animation: 425ms ease-out 1745ms 1 forwards centeranim;
+}
+.loader .clock__little {
+  position: absolute;
+  width: 70px;
+  top: 35px;
+  left: 61px;
+}
+.loader .clock__little img {
+  transform-origin: 35px 60px;
+  animation: 1700ms ease-out 300ms 1 forwards littlespin;
+}
+.loader .clock__big {
+  position: absolute;
+  width: 110px;
+  top: 0px;
+  left: 42px;
+  transform: rotateY(180deg);
+}
+.loader .clock__big img {
+  transform-origin: 56px 95px;
+  animation: 1700ms ease-out 300ms 1 forwards bigspin;
+}
+.loader__logo {
+  display: inline-block;
+  font-family: "Shrikhand", cursive;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 80px;
+  left: 35.5px;
+  opacity: 0;
+  animation: 955ms ease-in-out 1445ms 1 forwards textanim;
+}
+
+@keyframes bigspin {
+  0% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+  85% {
+    transform: rotate(-360deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+}
+@keyframes littlespin {
+  0% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+  85% {
+    transform: rotate(30deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(30deg);
+    opacity: 0;
+  }
+}
+@keyframes centeranim {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes textanim {
+  0% {
+    transform: rotateZ(-180deg);
+    opacity: 0;
+  }
+  74% {
+    opacity: 1;
+    filter: blur(20px);
+    /*letter-spacing: -2em;*/
+    transform: rotateZ(-180deg);
+    /*scale: 0;*/
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    /*letter-spacing: initial;*/
+    transform: rotateZ(0deg);
+    /*scale: 1;*/
+  }
+}
+@keyframes loaderanim {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden; /* à cause du z-index */
+  }
+}
 .btn {
   margin: 27px auto;
   color: white;
@@ -144,7 +276,7 @@ header {
   height: 50px;
   padding: 13px 18px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /*revoir la couleur */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /*0.1 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   opacity: 1;
   transition: opacity 300ms ease-in-out;
 }
@@ -362,6 +494,8 @@ h3 {
   background-size: 22px;
   height: 22px;
   width: 22px;
+  /*transition: background-image 1000ms; ne fonctionne pas avec Firefox */
+  /*duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | */
 }
 .card__icon input[type=checkbox]:checked::before { /* rajouter focus et hover */
   display: inline-flex;
@@ -370,7 +504,7 @@ h3 {
   background-size: 22px;
   height: 22px;
   width: 22px;
-  animation: 300ms ease-in-out both animlove; /* pour Firefox */
+  animation: 1000ms ease-in-out animlove; /* pour Firefox */
 }
 
 @keyframes animlove {

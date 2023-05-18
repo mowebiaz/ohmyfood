@@ -192,20 +192,23 @@ h3 {
             margin: 0;
             &::before {
                 display: block;
-                content:'';
+                content: '';
                 background-image: url('../images/icons/heartempty.svg'); /*revoir le chemin */
                 background-size: 22px;
                 height: 22px;
                 width: 22px;
+                /*transition: background-image 1000ms; ne fonctionne pas avec Firefox */
+                /*duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | */
             }
+            
             &:checked::before { /* rajouter focus et hover */
                 display: inline-flex;
-                content:'';
+                content: '';
                 background-image: url('../images/icons/heartfull.svg');
                 background-size: 22px;
                 height: 22px;
                 width: 22px;
-                animation: 300ms ease-in-out both animlove; /* pour Firefox */
+                animation: 1000ms ease-in-out animlove; /* pour Firefox */
             }
         }
     }
