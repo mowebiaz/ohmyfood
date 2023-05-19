@@ -12,17 +12,121 @@
   opacity: 0.85; 
 }
 
-@mixin medium-screen {
+/// Responsive versions of header
+@mixin responsive-header {
+  /// for medium screen 
   @media screen and (min-width: $medium) {
-    @content;
+    header {
+      box-shadow: none;
+    }
+  }
+  /// for large screen
+  @media screen and (min-width: $large) {
+    header {
+      padding: 26px 0;
+    }
   }
 }
 
-@mixin large-screen {
+/// Responsive versions of home page
+@mixin responsive-home {
+  /// for medium screen
+  @media screen and (min-width: $medium) {
+    .search {
+      gap: 25px;
+      ol {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; /*cnécessaire ? */
+        gap: 24px;
+      }
+      &__link {
+        margin-top: 0;
+        flex: 1 1 0;
+      }
+    }
+    .food-cards {
+      flex-direction: row;
+      margin: 0 auto;
+    }
+  }
+  /// for large screen
   @media screen and (min-width: $large) {
-    @content;
+    h1 {
+      font-size: 2.5rem;
+    }
+    .search {
+      width: 75%;
+      padding: 50px 0;
+      margin: 0 auto;
+    }
+    .food {
+      padding: 30px 0 10px 0;
+      h2 {
+        width: 75%;
+        margin: 0 auto;
+      }
+    }
+    .food-cards {
+      gap: 100px;
+      width: 75%;
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
   }
 }
+
+
+///Responsive versions of footer
+@mixin responsive-footer {
+  /// for medium screen
+  @media screen and (min-width: $medium) {
+    .footer {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 0;
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+      }
+      &__logo {
+        margin-bottom: 0;
+      }
+      &__link {
+        padding-bottom: 0;
+      }
+    }
+  }
+  /// for large screen
+  @media screen and (min-width: $large) {
+    .footer {
+      padding: 30px 25px;
+      justify-content: right;
+      align-items: end;
+      ul {
+        align-items: flex-end;
+        gap: 7px;
+      }
+      &__logo {
+        margin: 0 40px 0 0;
+      }
+      &__link {
+        &:nth-of-type(3) {
+          margin-left: 33px;
+          margin-right: 7px;
+        }
+        &:nth-of-type(4) {
+          margin-right: 74px;
+        }
+      }
+    }
+  }
+}
+
 
 
 /// Event wrapper

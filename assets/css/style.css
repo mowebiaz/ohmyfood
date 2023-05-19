@@ -55,6 +55,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/***** HEADER *****/
 header {
   width: 100%;
   text-align: center;
@@ -63,10 +64,9 @@ header {
   position: relative;
   z-index: 1;
 }
-@media screen and (min-width: 768px) {
-  header {
-    box-shadow: none;
-  }
+
+.restaurant header {
+  box-shadow: none;
 }
 
 .header__title { /* revoir la couleur du texte */
@@ -81,49 +81,35 @@ header {
   left: 17px;
 }
 
+/***** Media queries for header *****/
+@media screen and (min-width: 768px) {
+  header {
+    box-shadow: none;
+  }
+}
+@media screen and (min-width: 1440px) {
+  header {
+    padding: 26px 0;
+  }
+}
+/***** FOOTER *****/
 .footer {
   margin-top: auto; /* pour toujours le garder en bas avec le flex du container */
   padding: 22px 0 22px 25px;
   background-color: #373737;
   color: white;
 }
-@media screen and (min-width: 768px) {
-  .footer {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 16px;
-    padding: 30px 25px;
-  }
-}
 .footer ul {
   font-weight: 500;
   list-style-type: none;
-}
-@media screen and (min-width: 768px) {
-  .footer ul {
-    display: flex;
-    align-items: flex-end;
-    gap: 7px;
-    /*margin-right: 40px;*/
-  }
 }
 .footer__logo {
   font-family: "Shrikhand", cursive;
   font-size: 1.125rem;
   margin-bottom: 16px;
 }
-@media screen and (min-width: 768px) {
-  .footer__logo {
-    margin: 0 40px 0 0;
-  }
-}
 .footer__link {
   padding-bottom: 7px;
-}
-@media screen and (min-width: 768px) {
-  .footer__link { /* faire un not indent */
-    padding-bottom: 0;
-  }
 }
 .footer__link p {
   display: inline-block;
@@ -135,6 +121,50 @@ header {
   width: 12px;
 }
 
+/***** Media queries for footer *****/
+@media screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 0;
+  }
+  .footer ul {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .footer__logo {
+    margin-bottom: 0;
+  }
+  .footer__link {
+    padding-bottom: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .footer {
+    padding: 30px 25px;
+    justify-content: right;
+    align-items: end;
+  }
+  .footer ul {
+    align-items: flex-end;
+    gap: 7px;
+  }
+  .footer__logo {
+    margin: 0 40px 0 0;
+  }
+  .footer__link:nth-of-type(3) {
+    margin-left: 33px;
+    margin-right: 7px;
+  }
+  .footer__link:nth-of-type(4) {
+    margin-right: 74px;
+  }
+}
+/***** LOADER *****/
 .loader {
   background-color: #F6F6F6;
   position: absolute; /* à revoir */
@@ -267,6 +297,7 @@ header {
     visibility: hidden; /* à cause du z-index */
   }
 }
+/***** BUTTON *****/
 .btn {
   margin: 27px auto;
   color: white;
@@ -274,7 +305,7 @@ header {
   border-radius: 25px;
   font-weight: 500;
   height: 50px;
-  padding: 13px 18px;
+  padding: 13px 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /*revoir la couleur */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   opacity: 1;
@@ -285,6 +316,7 @@ header {
   opacity: 0.85;
 }
 
+/***** HOME *****/
 h1 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -302,10 +334,7 @@ h3 {
   font-weight: 700;
 }
 
-.header__icon {
-  display: none;
-}
-
+/* div Location */
 .location {
   height: 50px;
   background-color: #ececec;
@@ -319,40 +348,29 @@ h3 {
   margin-left: 17px;
 }
 
+/* section Explore */
 .explore {
   display: flex;
   flex-direction: column;
   text-align: center;
   background-color: #F6F6F6;
-  padding: 30px 0;
+  padding: 30px 0px;
 }
 .explore p {
   font-size: 1.125rem;
   font-weight: 300;
 }
 
+/* section Search */
 .search {
   padding: 48px 20px 68px 20px;
-}
-@media screen and (min-width: 1024px) {
-  .search {
-    width: 75%;
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
+  display: flex;
+  flex-direction: column;
 }
 .search ol {
   list-style-type: none;
   font-weight: 500;
   counter-reset: li; /* Initiate a counter */
-}
-@media screen and (min-width: 1024px) {
-  .search ol {
-    display: flex;
-    gap: 24px;
-  }
 }
 .search__link {
   position: relative;
@@ -365,12 +383,6 @@ h3 {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 15px hsla(0, 0%, 0%, 0.15);
-}
-@media screen and (min-width: 1024px) {
-  .search__link {
-    margin-top: 0;
-    flex: 1 1 0;
-  }
 }
 .search__link::before {
   content: counter(li);
@@ -401,23 +413,13 @@ h3 {
   flex-grow: 1;
 }
 
+/* section Food */
 .food {
   background-color: #F6F6F6;
   padding: 54px 20px 46px 20px;
 }
-@media screen and (min-width: 1024px) {
-  .food {
-    padding: 30px 0 10px 0;
-  }
-}
 .food h2 {
   margin-bottom: 28px;
-}
-@media screen and (min-width: 1024px) {
-  .food h2 {
-    width: 75%;
-    margin: 0 auto;
-  }
 }
 
 .food-cards {
@@ -425,16 +427,6 @@ h3 {
   flex-direction: column;
   gap: 18px;
   padding-bottom: 18px;
-}
-@media screen and (min-width: 1024px) {
-  .food-cards {
-    flex-direction: row;
-    gap: 100px;
-    width: 75%;
-    margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 20px;
-  }
 }
 
 .card {
@@ -479,13 +471,11 @@ h3 {
   height: 22px;
 }
 .card__icon input[type=checkbox] {
-  /* Add if not using autoprefixer */
   -webkit-appearance: none;
   appearance: none;
-  /* For iOS < 15 to remove gradient background */
-  /*background-color: #fff; /*à revoir */
-  /* Not removed via appearance */
-  margin: 0;
+}
+.card__icon input[type=checkbox]:hover {
+  cursor: pointer;
 }
 .card__icon input[type=checkbox]::before {
   display: block;
@@ -494,7 +484,7 @@ h3 {
   background-size: 22px;
   height: 22px;
   width: 22px;
-  /*transition: background-image 1000ms; ne fonctionne pas avec Firefox */
+  transition: background-image 1000ms; /*ne fonctionne pas avec Firefox */
   /*duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | */
 }
 .card__icon input[type=checkbox]:checked::before { /* rajouter focus et hover */
@@ -504,16 +494,62 @@ h3 {
   background-size: 22px;
   height: 22px;
   width: 22px;
-  animation: 1000ms ease-in-out animlove; /* pour Firefox */
+  /*animation: 1000ms ease-in-out animlove; /* pour Firefox */
 }
 
-@keyframes animlove {
-  from {
-    opacity: 0;
+/* @keyframes animlove {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+} */
+/***** Media queries for home page *****/
+@media screen and (min-width: 768px) {
+  .search {
+    gap: 25px;
   }
-  to {
-    opacity: 1;
+  .search ol {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /*cnécessaire ? */
+    gap: 24px;
   }
+  .search__link {
+    margin-top: 0;
+    flex: 1 1 0;
+  }
+  .food-cards {
+    flex-direction: row;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1440px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .search {
+    width: 75%;
+    padding: 50px 0;
+    margin: 0 auto;
+  }
+  .food {
+    padding: 30px 0 10px 0;
+  }
+  .food h2 {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .food-cards {
+    gap: 100px;
+    width: 75%;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+}
+.restaurant h1 {
+  color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

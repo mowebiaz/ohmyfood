@@ -1,6 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
+/***** HOME *****/
 h1 {
     @include title;
     text-align: center;
@@ -16,10 +17,7 @@ h3 {
     font-weight: $font-bold;
 }
 
-.header__icon {
-    display: none;
-}
-
+/* div Location */
 .location {
     height: 50px;
     background-color: adjust-color($background-color, $lightness: -4%);
@@ -33,35 +31,28 @@ h3 {
     }
 }
 
+/* section Explore */
 .explore {
     display: flex;
     flex-direction: column;
     text-align: center;
     background-color: $background-color;
-    padding: 30px 0;
+    padding: 30px 0px;
     p {
         font-size: 1.125rem;
         font-weight: $font-light;
     }
 }
 
+/* section Search */
 .search {
     padding: 48px 20px 68px 20px;
-    @include large-screen {
-        width: 75%;
-        margin: 50px auto;
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-    }
+    display: flex;
+    flex-direction: column;
     ol {
         list-style-type: none;
         font-weight: $font-medium;
         counter-reset: li; /* Initiate a counter */
-        @include large-screen {
-            display: flex;
-            gap: 24px;
-        }
     }
     &__link {
         position: relative;
@@ -74,10 +65,6 @@ h3 {
         align-items: center;
         justify-content: center;
         box-shadow: 0 4px 15px $shadow-color; 
-        @include large-screen {
-            margin-top: 0;
-            flex: 1 1 0;
-        }
         &::before {
             content:counter(li);
             counter-increment: li;
@@ -108,22 +95,17 @@ h3 {
 
         p {
             flex-grow: 1;
+
         } 
     }
 }
 
+/* section Food */
 .food {
     background-color: $background-color;
     padding: 54px 20px 46px 20px;
-    @include large-screen {
-        padding: 30px 0 10px 0 ;
-    }
     h2 {
         margin-bottom: 28px;
-        @include large-screen {
-            width: 75%;
-            margin: 0 auto;
-        }
     }
 }
 
@@ -132,14 +114,6 @@ h3 {
     flex-direction: column;
     gap: 18px;
     padding-bottom: 18px;
-    @include large-screen {
-        flex-direction: row;
-        gap: 100px;
-        width: 75%;
-        margin: 0 auto;
-        padding-top: 30px;
-        padding-bottom: 20px;
-    }
 }
 
 .card {
@@ -183,13 +157,11 @@ h3 {
         width: 22px;
         height: 22px;
         input[type="checkbox"] {
-            /* Add if not using autoprefixer */
             -webkit-appearance: none;
             appearance: none;
-            /* For iOS < 15 to remove gradient background */
-            /*background-color: #fff; /*à revoir */
-            /* Not removed via appearance */
-            margin: 0;
+            &:hover {
+                cursor: pointer;
+            }
             &::before {
                 display: block;
                 content: '';
@@ -197,10 +169,9 @@ h3 {
                 background-size: 22px;
                 height: 22px;
                 width: 22px;
-                /*transition: background-image 1000ms; ne fonctionne pas avec Firefox */
+                transition: background-image 1000ms; /*ne fonctionne pas avec Firefox */
                 /*duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | */
             }
-            
             &:checked::before { /* rajouter focus et hover */
                 display: inline-flex;
                 content: '';
@@ -208,19 +179,20 @@ h3 {
                 background-size: 22px;
                 height: 22px;
                 width: 22px;
-                animation: 1000ms ease-in-out animlove; /* pour Firefox */
+                /*animation: 1000ms ease-in-out animlove; /* pour Firefox */
             }
         }
     }
 }
 
-@keyframes animlove {
+/* @keyframes animlove {
     from {
         opacity: 0;
     }
     to {
         opacity: 1;
     }
-}
+} */
 
-
+/***** Media queries for home page *****/
+@include responsive-home;

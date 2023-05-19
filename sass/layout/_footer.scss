@@ -2,42 +2,24 @@
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
 
+/***** FOOTER *****/
 .footer {
     margin-top: auto; /* pour toujours le garder en bas avec le flex du container */
     padding: 22px 0 22px 25px;
     background-color: adjust-color($background-color, $lightness: -75%);
     color: white;
-    @include medium-screen {
-        display: flex;
-        flex-direction: row-reverse;
-        gap: 16px;
-        padding: 30px 25px ;
-    }
-    
     ul {
         font-weight: $font-medium;
         list-style-type: none;
-        @include medium-screen {
-            display: flex;
-            align-items: flex-end;
-            gap: 7px;
-            /*margin-right: 40px;*/
-        }
     }
 
     &__logo {
         font-family: $font-title;
         font-size: 1.125rem;
         margin-bottom: 16px;
-        @include medium-screen {
-            margin: 0 40px 0 0;
-        }
     }
     &__link {
         padding-bottom: 7px;
-        @include medium-screen { /* faire un not indent */
-            padding-bottom: 0;
-        }
         p {
             display: inline-block;
         }
@@ -50,3 +32,6 @@
 
     }
 }
+
+/***** Media queries for footer *****/
+@include responsive-footer;

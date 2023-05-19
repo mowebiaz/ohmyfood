@@ -1,6 +1,8 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+
+/***** HEADER *****/
 header {
     width: 100%;
     text-align: center;
@@ -8,9 +10,10 @@ header {
     padding: 10px 0;
     position: relative;
     z-index: 1;
-    @include medium-screen {
-        box-shadow: none;
-    }
+}
+
+.restaurant header {
+    box-shadow: none;
 }
 
 .header {
@@ -26,3 +29,8 @@ header {
         left: 17px;
     }
 }
+
+/***** Media queries for header *****/
+@include responsive-header;
+
+
