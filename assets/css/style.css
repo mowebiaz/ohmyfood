@@ -315,6 +315,13 @@ header {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
   opacity: 0.85;
 }
+.btn__menu { /* revoir les marges */
+  display: block;
+  text-align: center;
+  width: fit-content;
+  padding: 13px 50px;
+  margin: 0 auto;
+}
 
 /***** HOME *****/
 h1 {
@@ -548,8 +555,130 @@ h3 {
     padding-bottom: 20px;
   }
 }
+/***** RESTAURANT *****/
+.restaurant main {
+  display: flex;
+  flex-direction: column;
+}
 .restaurant h1 {
-  color: red;
+  text-align: start;
+  margin-left: 4px;
+  padding: 0;
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.75rem;
+}
+.restaurant h2 {
+  font-variant: small-caps;
+  font-weight: 300;
+}
+.restaurant h2::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 40px;
+  background-color: #99E2D0;
+  top: 27px;
+}
+.restaurant h3 {
+  font-weight: 500;
+  padding-bottom: 5px;
+}
+
+/* .cover {
+    height: 275px;
+    background-attachment: local;
+    background-image: url('/assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 0 ;
+    background-size: contain;
+} */
+.cover {
+  height: 220px;
+}
+.cover img {
+  height: 275px;
+  width: 100%;
+}
+
+.menu {
+  width: 100%;
+  background-color: #F6F6F6;
+  border-radius: 50px 50px 0 0; /* trouver les bonnes valeurs */
+  padding: 35px 13px 40px 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.menu p {
+  font-size: 15px;
+  font-weight: 300;
+}
+.menu .entrees, .menu .plats, .menu .desserts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu__card {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 69px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px hsla(0, 0%, 0%, 0.1);
+}
+.menu__card > div {
+  height: 100%;
+}
+.menu__card__text {
+  padding: 15px;
+  overflow: hidden;
+  min-width: 65%;
+}
+.menu__card__text h3, .menu__card__text p {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu__card__right {
+  max-width: 35%;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.menu__card__right > * {
+  height: 100%;
+}
+.menu__card__right .price {
+  min-width: 50%; /*min-width */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 15px;
+}
+.menu__card__right .add {
+  width: 0%;
+  overflow: hidden;
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1000ms ease-in-out;
+}
+.menu__card__right .add .fa-circle-check {
+  color: white;
+  line-height: 20px;
+}
+.menu__card:hover .add {
+  width: 50%;
+  padding: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */
