@@ -132,7 +132,7 @@ h3 {
         position: absolute;
         right: 22px;
         top: 13px;
-        z-index: 2;
+        z-index: 1;
         background-color: $tertiary-color;
         color: adjust-color($tertiary-color, $saturation: 44%,$lightness: -48%);
         border-radius: 2px;
@@ -161,9 +161,6 @@ h3 {
         margin-right: 20px;
     }
 }
-
-
-
 
 
 

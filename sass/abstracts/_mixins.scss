@@ -25,6 +25,9 @@
   @media screen and (min-width: $large) {
     header {
       padding: 26px 0;
+      .header__icon {
+        top: 33px;
+      }
     }
   }
 }
@@ -78,7 +81,40 @@
 }
 
 
-///Responsive versions of footer
+/// Responsive versions of restaurant pages
+@mixin responsive-restaurant {
+  /// for medium screen
+  @media screen and (min-width: $medium) {
+    .menu {
+      width: 73%;
+      margin: 0 auto;
+    }
+  }
+  /// for large screen
+  @media screen and (min-width: $large) {
+    .cover {
+      height: 343px;
+      img {
+        height: 383px;
+      }
+    }
+    .menu {
+      align-items: center;
+      padding: 50px 0 40px 0;
+      &__title {
+        gap: 24px;
+      }
+      .entrees,
+      .plats,
+      .desserts {
+        width: 60%;
+      }
+    }
+  }
+}
+
+
+/// Responsive versions of footer
 @mixin responsive-footer {
   /// for medium screen
   @media screen and (min-width: $medium) {

@@ -7,13 +7,13 @@
         position: absolute;
         visibility: visible;
         opacity: 1;
-        transition: all 800ms;
+        transition: all 500ms;
     }
     .full-heart {
         position: absolute;
         visibility: hidden;
         opacity: 0;
-        transition: all 800ms;
+        transition: all 500ms;
     }
     &:hover {
         cursor: pointer;
