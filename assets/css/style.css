@@ -772,6 +772,9 @@ h3 {
   color: white;
   line-height: 20px;
 }
+.menu__card:hover {
+  cursor: pointer;
+}
 .menu__card:hover .add {
   width: 50%;
   padding: 30px;
