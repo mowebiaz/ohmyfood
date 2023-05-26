@@ -6,8 +6,7 @@
     }
     h1 {
         text-align: start;
-        margin-left: 4px;
-        padding: 0;
+        padding: 0 0 0 4px;
         font-family: $font-title;
         font-weight: 400;
         font-style: italic;
@@ -27,21 +26,13 @@
     }
     h3 {
         font-weight: $font-medium;
-        padding-bottom: 5px;
     }
 }
-/* .cover {
-    height: 275px;
-    background-attachment: local;
-    background-image: url('/assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg');
-    background-repeat: no-repeat;
-    background-position: 0 0 ;
-    background-size: contain;
-} */
 
 .cover {
     height: 220px;
     img {
+        object-fit: cover;
         height: 275px;
         width: 100%;
     }
@@ -55,6 +46,11 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 35px; /* 24px dans la version responsive */
+    }
     p {
         font-size: 15px;
         font-weight: $font-light;
@@ -65,6 +61,7 @@
         gap: 12px;
     }
 }
+
 
 .menu__card {
     display: flex;
@@ -79,9 +76,10 @@
         height: 100%;
     }
     &__text {
-        padding: 15px;
+        /*padding: 15px;*/
+        padding: 15px 0 15px 15px;
         overflow: hidden;
-        min-width: 65%;
+        min-width: auto;
         h3, p {
             width: 100%;
             overflow: hidden;
@@ -98,14 +96,15 @@
             height: 100%;
         }
         .price {
-            min-width: 50%; /*min-width */
+            width: 50%; /*min-width */
             display: flex;
             justify-content: center;
             align-items: flex-end;
             font-size: 15px;
             font-weight: $font-bold;
-            padding: 10px 15px;
-
+            /*padding: 10px 15px;*/
+            padding: 0 20px 10px 5px;
+            transition: all 1000ms ease-in-out;
       }
         .add {
             width: 0%;
@@ -125,6 +124,9 @@
         .add {
             width: 50%;
             padding: 30px;
+        }
+        .price {
+            padding: 0 10px 10px 5px;
         }
     }
 }  

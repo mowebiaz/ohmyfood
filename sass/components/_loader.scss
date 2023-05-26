@@ -11,6 +11,7 @@
     justify-content: center;
     align-items: center;
     animation: 300ms ease-out 2700ms 1 forwards loaderanim;
+
     .clock {
         width: 200px;
         height: 200px;
@@ -128,8 +129,11 @@
 @keyframes loaderanim {
     0% {
         opacity: 1;
+        visibility: visible;        
+    }
+    25% {
+        opacity: 0.25;
         visibility: visible;
-        
     }
     100% {
         opacity: 0;

@@ -1,0 +1,113 @@
+/***** button HEART *****/
+.heart {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    .empty-heart {
+        position: absolute;
+        visibility: visible;
+        opacity: 1;
+        transition: all 1000ms;
+    }
+    .full-heart {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1000ms;
+    }
+    &:hover {
+        cursor: pointer;
+        .full-heart {
+            visibility: visible;
+            opacity: 1;
+        }
+        .empty-heart {
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+}
+
+
+
+
+
+/*     .empty-heart {
+        position: absolute;
+        visibility: visible;
+        opacity: 1;
+        transition: all 1000ms;
+
+    }
+    .full-heart {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1000ms;
+
+    } */
+
+
+
+
+/* .card__icon {
+    position: relative;
+    border: 1px solid;
+    font-size: 22px;
+    justify-content: flex-end;
+    width: 22px;
+    height: 22px; 
+    margin-right: 25px;
+    .empty-heart {
+        position: absolute;
+        visibility: visible;
+        transition: all 1000ms ;
+    }
+    .full-heart {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1000ms;
+    }
+    &:hover {
+        .full-heart {
+            visibility: visible;
+            opacity: 1;
+        }
+        .empty-heart {
+            visibility: hidden;
+        }
+    }
+
+} */
+
+
+
+/*     .empty-heart { 
+        position: absolute; 
+        visibility: visible; 
+        transform: scale(1); 
+        transition: transform 500ms; 
+        &:active { 
+            visibility: hidden; 
+            cursor: pointer; 
+        } 
+    }
+
+.anim-heart { 
+    position: absolute; 
+    color: $secondary; 
+    opacity: 0; 
+    &:active { 
+        transform: scale(1.1); 
+        visibility: visible; 
+        cursor: pointer; 
+        opacity: 1; 
+    } 
+} */
+
+
+
+
+
+

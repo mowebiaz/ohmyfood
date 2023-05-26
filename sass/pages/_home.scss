@@ -15,6 +15,7 @@ h2 {
 h3 {
     font-size: 1.125rem;
     font-weight: $font-bold;
+    padding-bottom: 5px;
 }
 
 /* div Location */
@@ -103,7 +104,7 @@ h3 {
 /* section Food */
 .food {
     background-color: $background-color;
-    padding: 54px 20px 46px 20px;
+    padding: 54px 17px 46px 17px;
     h2 {
         margin-bottom: 28px;
     }
@@ -121,21 +122,17 @@ h3 {
     border-radius: 15px;
     position: relative;
     flex: 1 1 0;
-    img { 
+    &__cover { 
+        object-fit: cover;
         height: 175px;
         width: 100%;
         border-radius: 15px 15px 0 0;
-    }
-    &__content {
-        padding: 16px 0 16px 13px;
-        p {
-            font-weight: $font-light;
-        }        
     }
     &__new {
         position: absolute;
         right: 22px;
         top: 13px;
+        z-index: 2;
         background-color: $tertiary-color;
         color: adjust-color($tertiary-color, $saturation: 44%,$lightness: -48%);
         border-radius: 2px;
@@ -144,55 +141,31 @@ h3 {
         display: flex;
         justify-content: center;
         align-items: center;
-        
         p {
             font-weight: $font-medium;
             font-size: 0.9rem;
         }
     }
-    &__icon {
-        position: absolute;
-        bottom: 33px;
-        right: 25px; 
-        width: 22px;
-        height: 22px;
-        input[type="checkbox"] {
-            -webkit-appearance: none;
-            appearance: none;
-            &:hover {
-                cursor: pointer;
-            }
-            &::before {
-                display: block;
-                content: '';
-                background-image: url('../images/icons/heartempty.svg'); /*revoir le chemin */
-                background-size: 22px;
-                height: 22px;
-                width: 22px;
-                transition: background-image 1000ms; /*ne fonctionne pas avec Firefox */
-                /*duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | */
-            }
-            &:checked::before { /* rajouter focus et hover */
-                display: inline-flex;
-                content: '';
-                background-image: url('../images/icons/heartfull.svg');
-                background-size: 22px;
-                height: 22px;
-                width: 22px;
-                /*animation: 1000ms ease-in-out animlove; /* pour Firefox */
-            }
-        }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__content {
+        padding: 16px 0 16px 13px;
+        p {
+            font-weight: $font-light;
+        }        
+    }
+    .heart {
+        margin-right: 20px;
     }
 }
 
-/* @keyframes animlove {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-} */
+
+
+
+
 
 /***** Media queries for home page *****/
 @include responsive-home;
