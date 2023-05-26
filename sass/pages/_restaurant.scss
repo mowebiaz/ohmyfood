@@ -50,18 +50,29 @@
         display: flex;
         align-items: center;
         gap: 35px; /* 24px dans la version responsive */
+        /*justify-content: flex-start;*/
     }
     p {
         font-size: 15px;
         font-weight: $font-light;
     }
-    .entrees, .plats, .desserts {
+    .entrees, 
+    .plats, 
+    .desserts {
         display: flex;
         flex-direction: column;
         gap: 12px;
     }
+    .entrees {
+        animation: animentrees 800ms ease-out 50ms 1 both;
+    }
+    .plats {
+        animation: animentrees 800ms ease-out 550ms 1 both;
+    }
+    .desserts {
+        animation: animentrees 800ms ease-out 1150ms 1 both;
+    }
 }
-
 
 .menu__card {
     display: flex;

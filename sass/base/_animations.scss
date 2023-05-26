@@ -1,0 +1,19 @@
+/// Animations
+/* Animations of restaurant page */
+@keyframes animentrees {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+        filter: blur(40px);
+    }
+    30% {
+        transform: translateY(-50);
+        opacity: 0.5;
+        filter: blur(20px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}

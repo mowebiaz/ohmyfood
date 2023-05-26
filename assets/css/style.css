@@ -11,6 +11,24 @@ input {
   margin: 0; /* Remove the margin in Firefox and Safari: à revoir */
 }
 
+/* Animations of restaurant page */
+@keyframes animentrees {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+    filter: blur(40px);
+  }
+  30% {
+    transform: translateY(-50);
+    opacity: 0.5;
+    filter: blur(20px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
 body {
   display: flex;
   justify-content: center;
@@ -307,13 +325,13 @@ header {
   position: absolute;
   visibility: visible;
   opacity: 1;
-  transition: all 1000ms;
+  transition: all 800ms;
 }
 .heart .full-heart {
   position: absolute;
   visibility: hidden;
   opacity: 0;
-  transition: all 1000ms;
+  transition: all 800ms;
 }
 .heart:hover {
   cursor: pointer;
@@ -672,15 +690,27 @@ h3 {
   display: flex;
   align-items: center;
   gap: 35px; /* 24px dans la version responsive */
+  /*justify-content: flex-start;*/
 }
 .menu p {
   font-size: 15px;
   font-weight: 300;
 }
-.menu .entrees, .menu .plats, .menu .desserts {
+.menu .entrees,
+.menu .plats,
+.menu .desserts {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+.menu .entrees {
+  animation: animentrees 800ms ease-out 50ms 1 both;
+}
+.menu .plats {
+  animation: animentrees 800ms ease-out 550ms 1 both;
+}
+.menu .desserts {
+  animation: animentrees 800ms ease-out 1150ms 1 both;
 }
 
 .menu__card {
