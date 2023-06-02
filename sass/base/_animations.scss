@@ -1,13 +1,13 @@
 /// Animations
 /* Animations of restaurant page */
-@keyframes animentrees {
+@keyframes anim-food {
     0% {
         transform: translateY(-100px);
         opacity: 0;
         filter: blur(40px);
     }
     30% {
-        transform: translateY(-50);
+        transform: translateY(-50px);
         opacity: 0.5;
         filter: blur(20px);
     }

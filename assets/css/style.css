@@ -12,14 +12,14 @@ input {
 }
 
 /* Animations of restaurant page */
-@keyframes animentrees {
+@keyframes anim-food {
   0% {
     transform: translateY(-100px);
     opacity: 0;
     filter: blur(40px);
   }
   30% {
-    transform: translateY(-50);
+    transform: translateY(-50px);
     opacity: 0.5;
     filter: blur(20px);
   }
@@ -705,13 +705,13 @@ h3 {
   gap: 12px;
 }
 .menu .entrees {
-  animation: animentrees 800ms ease-out 50ms 1 both;
+  animation: anim-food 800ms ease-out 50ms 1 both;
 }
 .menu .plats {
-  animation: animentrees 800ms ease-out 550ms 1 both;
+  animation: anim-food 800ms ease-out 550ms 1 both;
 }
 .menu .desserts {
-  animation: animentrees 800ms ease-out 1150ms 1 both;
+  animation: anim-food 800ms ease-out 1150ms 1 both;
 }
 
 .menu__card {
