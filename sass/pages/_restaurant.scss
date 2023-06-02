@@ -48,7 +48,10 @@
     &__title {
         display: flex;
         align-items: center;
-        gap: 35px; 
+        justify-content: space-between;
+        .heart {
+            margin-right: 27px;
+        }
     }
     p {
         font-size: 15px;

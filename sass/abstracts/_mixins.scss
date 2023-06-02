@@ -25,9 +25,6 @@
   @media screen and (min-width: $large) {
     header {
       padding: 26px 0;
-      .header__icon {
-        top: 33px;
-      }
     }
   }
 }
@@ -88,6 +85,15 @@
     .menu {
       width: 73%;
       margin: 0 auto;
+      align-items: center;
+      .entrees,
+      .plats,
+      .desserts {
+        width: 60%;
+      }
+      &__title {
+        gap: 24px;
+      }
     }
   }
   /// for large screen
@@ -99,16 +105,8 @@
       }
     }
     .menu {
-      align-items: center;
       padding: 50px 0 40px 0;
-      &__title {
-        gap: 24px;
-      }
-      .entrees,
-      .plats,
-      .desserts {
-        width: 60%;
-      }
+
     }
   }
 }

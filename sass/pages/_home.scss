@@ -148,10 +148,13 @@ h3 {
     }
     &__bottom {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        a {
+            display: block;
+            flex-grow: 1;
+        }
     }
-    &__content {
+    &__content {        
         padding: 16px 0 16px 13px;
         p {
             font-weight: $font-light;
