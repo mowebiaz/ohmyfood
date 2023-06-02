@@ -2,6 +2,7 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 
+/*** Basic styles for body ***/
 body {
   display: flex;
   justify-content: center;
@@ -10,7 +11,7 @@ body {
 .container { 
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* pour que le footer reste en bas avec margin-top auto */
+  min-height: 100vh; /* for footer position */
   width: 100%;
   max-width: $max-width;
 }
@@ -24,13 +25,9 @@ body {
   border: 0;
 }
 
+
 /*** Basic styles for links ***/
 a {
   color: inherit;
   text-decoration: none;
-
-/*   @include on-event {
-    color: $text-color;
-    text-decoration: underline;
-  } */
 }
