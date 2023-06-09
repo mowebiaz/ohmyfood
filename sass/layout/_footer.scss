@@ -4,7 +4,7 @@
 
 /***** FOOTER *****/
 .footer {
-    margin-top: auto; /* pour toujours le garder en bas avec le flex du container */
+    margin-top: auto; 
     padding: 22px 0 22px 25px;
     background-color: adjust-color($background-color, $lightness: -75%);
     color: white;
@@ -31,5 +31,5 @@
     }
 }
 
-/***** Media queries for footer *****/
+/*** Media queries for footer ***/
 @include responsive-footer;

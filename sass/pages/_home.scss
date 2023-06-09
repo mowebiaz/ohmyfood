@@ -83,7 +83,7 @@ h3 {
         }
         .fa-mobile-screen-button,
         .fa-list-ul {
-            color: gray; /* à revoir */
+            color: #7e7e7e;
         }
 
         .fa-store {
@@ -166,5 +166,5 @@ h3 {
 
 
 
-/***** Media queries for home page *****/
+/*** Media queries for home page ***/
 @include responsive-home;

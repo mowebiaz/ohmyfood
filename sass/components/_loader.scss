@@ -5,7 +5,7 @@
 /***** LOADER *****/
 .loader {
     background-color: $background-color;
-    position: absolute; /* à revoir */
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 999;
@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: 1250ms ease-in-out 1750ms 1 forwards loaderanim;
+    animation: loaderanim 1250ms ease-in-out 1750ms 1 forwards;
 
     .clock {
         width: 200px;
@@ -28,13 +28,13 @@
             position: absolute;
             width: 20px;
             height: 20px;        
-            top: calc(50% - 10px); /* 50% moins la moitié de height */
+            top: calc(50% - 10px); /* 50% minus height/2 */
             left: calc(50% - 10px);
             border-radius: 50%;
             background-color:$tertiary-color;
             box-shadow: 0 0 5px 2px $tertiary-color;
             z-index: 1;
-            animation: 405ms ease-out 1745ms 1 forwards centeranim;
+            animation: centeranim 405ms ease-out 1745ms 1 forwards;
         }
         &__little {
             position: absolute;
@@ -43,7 +43,7 @@
             left: 61px;
             img {
                 transform-origin: 35px 60px;
-                animation: 1700ms ease-out 300ms 1 forwards littlespin;
+                animation: littlespin 1700ms ease-out 300ms 1 forwards;
             }
         }
         &__big {
@@ -54,7 +54,7 @@
             transform: rotateY(180deg);
             img {
                 transform-origin: 56px 95px;
-                animation: 1700ms ease-out 300ms 1 forwards bigspin;
+                animation: bigspin 1700ms ease-out 300ms 1 forwards;
             }
         }
     }
@@ -63,22 +63,18 @@
 @keyframes bigspin {
     0% { 
         transform: rotate(0);
-        opacity: 1;
     }
     100% { 
         transform: rotate(-360deg); 
-        opacity: 1;
     }
 }
 
 @keyframes littlespin {
     0% { 
         transform: rotate(0);
-        opacity: 1;
     }
     100% { 
         transform: rotate(30deg); 
-        opacity: 1;
     }
 }
 
@@ -98,6 +94,6 @@
     }
     100% {
         opacity: 0;
-        visibility: hidden; /* à cause du z-index */
+        visibility: hidden; 
     }
 }

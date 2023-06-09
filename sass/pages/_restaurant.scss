@@ -94,11 +94,11 @@
         /*padding: 15px;*/
         padding: 15px 0 15px 15px;
         overflow: hidden;
-        min-width: auto;
+        /*min-width: auto;*/
         h3, p {
             width: 100%;
             overflow: hidden;
-            white-space: nowrap;            
+            white-space: nowrap;        
             text-overflow: ellipsis;
         }
     }
@@ -106,24 +106,24 @@
         max-width: 35%;
         display: flex;
         justify-content: flex-end;
-        overflow: hidden;
+        /*overflow: hidden;*/
         > * {
             height: 100%;
         }
         .price {
-            width: 50%; /*min-width */
+            min-width: 50%; /*width */
             display: flex;
             justify-content: center;
             align-items: flex-end;
             font-size: 15px;
             font-weight: $font-bold;
             /*padding: 10px 15px;*/
-            padding: 0 20px 10px 5px;
-            transition: all 300ms ease-in-out;
+            padding: 0 15px 10px 5px;
+            transition: padding 300ms ease-in-out;
       }
         .add {
             width: 0%;
-            overflow: hidden;
+            /*overflow: hidden;*/
             background-color: $tertiary-color;
             display: flex;
             justify-content: center;
@@ -148,5 +148,5 @@
 }  
 
 
-/***** Media queries for restaurant page *****/
+/*** Media queries for restaurant page ***/
 @include responsive-restaurant;
