@@ -558,7 +558,7 @@ h3 {
 .menu {
   width: 100%;
   background-color: #F6F6F6;
-  border-radius: 50px 50px 0 0; /* trouver les bonnes valeurs */
+  border-radius: 50px 50px 0 0;
   padding: 35px 13px 40px 13px;
   display: flex;
   flex-direction: column;
@@ -607,10 +607,8 @@ h3 {
   height: 100%;
 }
 .menu__card__text {
-  /*padding: 15px;*/
   padding: 15px 0 15px 15px;
   overflow: hidden;
-  /*min-width: auto;*/
 }
 .menu__card__text h3, .menu__card__text p {
   width: 100%;
@@ -622,25 +620,22 @@ h3 {
   max-width: 35%;
   display: flex;
   justify-content: flex-end;
-  /*overflow: hidden;*/
 }
 .menu__card__right > * {
   height: 100%;
 }
 .menu__card__right .price {
-  min-width: 50%; /*width */
+  min-width: 50%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   font-size: 15px;
   font-weight: 700;
-  /*padding: 10px 15px;*/
   padding: 0 15px 10px 5px;
   transition: padding 300ms ease-in-out;
 }
 .menu__card__right .add {
   width: 0%;
-  /*overflow: hidden;*/
   background-color: #99E2D0;
   display: flex;
   justify-content: center;
